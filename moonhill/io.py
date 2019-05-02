@@ -1,8 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# pylint: disable = C0111, C0301, C0305, C0326
-#
-# file
 
 import os
 import json
