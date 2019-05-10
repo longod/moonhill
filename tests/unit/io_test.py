@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import unittest
 import os, sys
 sys.path.append(os.getcwd())
@@ -10,12 +13,6 @@ class TestIO(unittest.TestCase):
         r = moonhill.io.read_text(path)
         self.assertEqual(path, r)
 
-    def test_json(self):
-        path = 'temp/test.json'
-        data = { 'key' : path }
-        moonhill.io.write_json(path, data)
-        r = moonhill.io.read_json(path)
-        self.assertEqual(path, r['key'])
 
 if __name__ == '__main__':
     unittest.main()
