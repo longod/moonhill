@@ -43,8 +43,9 @@ def FileHandler(filename, mode='a', encoding=None, delay=False):
 def Formatter(fmt=None, datefmt=None, style='%'):
     return logging.Formatter(fmt=fmt, datefmt=datefmt, style=style)
 
+# get default setuped logger
 # use __name__
-def getDefaultLogger(name):
+def get_logger(name):
     logger = getLogger(__name__)
     handler = StreamHandler(sys.stdout)
     formatter = Formatter('%(asctime)s %(levelname)s %(name)s %(funcName)s: %(message)s')
