@@ -8,9 +8,13 @@ import moonhill.log
 
 class TestLog(unittest.TestCase):
     def test_log(self):
-        logger = moonhill.log.get_logger(__name__)
-        logger.debug('this is a test')
+        logger = moonhill.log.get_stdout_logger(__name__)
         self.assertIsNotNone(logger)
+        logger.debug('debug')
+        logger.info('info')
+        logger.warning('warning')
+        logger.error('error')
+        logger.critical('critical')
 
 
 if __name__ == '__main__':
