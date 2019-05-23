@@ -16,5 +16,9 @@ class TestModel(unittest.TestCase):
         self.assertNotEqual(moonhill.nn.models.vgg16_1d(), None)
         self.assertNotEqual(moonhill.nn.models.vgg16_1d(keras.models.Sequential()), None)
 
+    def test_vgg19(self):
+        self.assertNotEqual(moonhill.nn.models.vgg19_1d(), None)
+        self.assertNotEqual(moonhill.nn.models.vgg19_1d(keras.models.Sequential()), None)
+
 if __name__ == '__main__':
     unittest.main()
