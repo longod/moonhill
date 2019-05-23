@@ -14,15 +14,17 @@ import numpy
 class HistoryPlotter(keras.callbacks.Callback):
     '''
     Dynamic History Plot for Jupyter
-    you must write below
+    you must write below order
     import matplotlib
     %matplotlib notebook
+    import moonhill.nn.callbacks
     '''
     def __init__(self, loss='loss', acc='acc'):
         self.loss = loss
         self.val_loss = 'val_' + loss
         self.acc = acc
         self.val_acc = 'val_' + acc
+
     def on_train_begin(self, logs=None):
         self.epoch = []
         self.history = {}
@@ -40,6 +42,7 @@ class HistoryPlotter(keras.callbacks.Callback):
     def plot(self):
         self._plot(self.axes_loss, self.epoch, self.history, self.loss, self.val_loss)
         self._plot(self.axes_acc, self.epoch, self.history, self.acc, self.val_acc)
+        self.figure.tight_layout()
         self.figure.canvas.draw()
 
     def _minmax(self, epoch, history):

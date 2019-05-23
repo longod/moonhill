@@ -3,6 +3,9 @@
 
 import unittest
 import os, sys
+# from .. import moonhill.log # これがかけない…
+# from .. import moonhill これはいけるのに…
+# from ..moonhill import log これはいけるのに…
 sys.path.append(os.getcwd())
 import moonhill.log
 
